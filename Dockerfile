@@ -41,9 +41,5 @@ ENV MODE=sse
 # Expose the FastAPI port
 EXPOSE 8001
 
-# Add healthcheck
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:${FASTMCP_PORT}/health || exit 1
-
 # Default to SSE mode
-CMD ["python", "splunk_mcp.py", "sse"] 
+CMD ["python", "splunk_mcp.py", "sse"]
